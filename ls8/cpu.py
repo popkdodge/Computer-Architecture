@@ -7,7 +7,10 @@ class CPU:
 
     def __init__(self):
         """Construct a new CPU."""
-        pass
+        self.register = [0] * 256
+        self.gen = [0] * 8
+        self.pcounter = 0
+        self.run = False
 
     def load(self):
         """Load a program into memory."""
@@ -60,6 +63,29 @@ class CPU:
 
         print()
 
+    def ram_read(location):
+        """
+        A function that is use to accept
+        address to read "MAE" and return
+        the value located in the value that is 
+        store there.
+        """
+
+        MDR = self.register[location]
+        return MDR
+
+    def ram_write(value, MAR):
+        """
+        A function that is use to accept
+        address location to write to "MAR"
+        and overwite the new value in that
+        address
+        """
+
+        self.register[MAR] = MDR
+        return f"{Value} is written in {MAR}"
+
     def run(self):
         """Run the CPU."""
+        
         pass
